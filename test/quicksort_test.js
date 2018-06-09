@@ -14,4 +14,15 @@ describe('QuickSort', () => {
     expect(pivot).to.have.property('index').that.equals(1);
     expect(pivot).to.have.property('value').that.equals(3);
   });
+
+  it('should be able to sort an array', () => {
+    let quickSort = new QuickSort([1,3,5,4,2]);
+    let quickSortB = new QuickSort([1]);
+    let quickSortC = new QuickSort([10,1,9,2,8,3,7,4,6,5]);
+
+    expect(quickSortB.sort()).to.eql([1]);
+    expect(quickSort.sort()).to.eql([1,2,3,4,5]);
+
+    expect(quickSortC.sort()).to.eql([1,2,3,4,5,6,7,8,9,10]);
+  });
 });
